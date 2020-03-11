@@ -10,15 +10,18 @@ import UIKit
 
 class scrollViewController: UIViewController {
 
+    
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var box: UIView!
+    @IBOutlet weak var boxHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    @IBAction func changeBoxSize(_ sender: Any) {
-        box.frame.size.height = CGFloat(slider.value)
+    @IBAction func changeBox(_ sender: Any) {
+        //box.frame.size.height = CGFloat(slider.value)
+        boxHeight.constant = CGFloat(slider.value)
     }
     
     @IBAction func closePop(_ sender: Any) {
